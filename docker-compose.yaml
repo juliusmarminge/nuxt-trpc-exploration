@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db
+    ports:
+      - 5732:5432 # avoid port collision
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

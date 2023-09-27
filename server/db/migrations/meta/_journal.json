@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1695846958233,
+      "tag": "0000_marvelous_norman_osborn",
+      "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1695849009417,
+      "tag": "0001_glorious_jane_foster",
+      "breakpoints": false
+    }
+  ]
+}

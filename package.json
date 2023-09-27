@@ -1,0 +1,46 @@
+{
+  "name": "nuxt-exploration",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.8.0"
+  },
+  "packageManager": "pnpm@8.8.0",
+  "scripts": {
+    "build": "nuxi build",
+    "db:generate": "dotenv -- drizzle-kit generate:pg --config server/db/config.ts",
+    "db:migrate": "pnpm db:generate && dotenv -- tsx server/db/migrate",
+    "db:nuke": "docker compose down --volumes --remove-orphans",
+    "db:seed": "dotenv -- tsx server/db/seed",
+    "db:studio": "dotenv -- drizzle-kit studio --config server/db/config.ts",
+    "db:up": "docker compose up -d && pnpm db:migrate",
+    "dev": "nuxi dev",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "postinstall": "nuxi prepare",
+    "typecheck": "nuxi typecheck"
+  },
+  "dependencies": {
+    "@trpc/client": "^10.38.4",
+    "@trpc/server": "^10.38.4",
+    "drizzle-orm": "^0.28.6",
+    "postgres": "^3.3.5",
+    "superjson": "^1.13.3",
+    "trpc-nuxt": "0.10.12",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^0.8.5",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/node": "^20.7.1",
+    "dotenv-cli": "^7.3.0",
+    "drizzle-kit": "^0.19.13",
+    "nuxt": "^3.7.4",
+    "pg": "^8.11.3",
+    "tailwindcss": "^3.3.3",
+    "tsx": "^3.13.0",
+    "typescript": "^5.2.2",
+    "vue-tsc": "^1.8.15"
+  }
+}
